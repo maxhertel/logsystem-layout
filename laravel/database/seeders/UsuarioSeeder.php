@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-Use App\Models\User;
+use Illuminate\Support\Facades\Hash; // Correta importação da classe Hash
+use App\Models\User;
 
 class UsuarioSeeder extends Seeder
 {
@@ -13,14 +13,14 @@ class UsuarioSeeder extends Seeder
      */
     public function run(): void
     {
-         // Excluir todos os usuários existentes
-         User::truncate();
+        // Excluir todos os usuários existentes
+        User::truncate();
 
-         // Criar o novo usuário
-         User::create([
-             'name' => 'Usuário Master',
-             'email' => 'rafaeldill16@gmail.com',
-             'password' => Hash::make('rafa@#234f3'), // Use Hash::make para criptografar a senha
-         ]);
+        // Criar o novo usuário
+        User::create([
+            'name' => 'Usuário Master',
+            'email' => 'rafaeldill16@gmail.com',
+            'password' => Hash::make('rafa@#234f3'), // Criptografar a senha
+        ]);
     }
 }
