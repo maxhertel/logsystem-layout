@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class NetworkController extends Controller
 {
     public function showMain() {
-        return view('main');
+        return view('pages.main');
     }
 
     public function showUsers() {
